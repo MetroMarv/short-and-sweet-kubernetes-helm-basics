@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: podinfo-ingress
+  namespace: <your-namespace>
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: <your-domain>
+      http:
+        paths:
+          - path: /<your-namespace>/?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: podinfo-svc
+                port:
+                  number: 9898
