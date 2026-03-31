@@ -17,4 +17,8 @@ marp presentation.md --pdf --allow-local-files
 ## Prerequesites for tasks
 
 In order to do the tasks mentioned in the presentation you'll
-need to have the CLI tools `kubectl` and `helm` and also access to a Kubernetes cluster. Can either be local or remote.
+need to have the CLI tools `kubectl` and `helm`, access to a
+Kubernetes cluster and the permissions to create resources
+(namespaces, pods, deployments, services, ingress).
+
+The cluster can either run locally or remote.
